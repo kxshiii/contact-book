@@ -10,13 +10,12 @@ def print_main_menu():
     print("8. Exit")
 
 def get_menu_choice():
-    try:
-        choice = int(input("Enter your choice (1-8): "))
-        if 1 <= choice <= 8:
-            return choice
-        else:
-            print("Invalid choice. Please select a number between 1 and 8.")
-            return None
-    except ValueError:
-        print("Invalid input. Please enter a number.")
-        return None
+    while True:
+        try:
+            choice = int(input("Enter your choice (1-8): "))
+            if 1 <= choice <= 8:
+                return choice
+            else:
+                print("Invalid choice. Please select a number between 1 and 8.")
+        except ValueError:
+            print("Invalid input. Please enter a number.")

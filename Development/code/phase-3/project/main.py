@@ -1,7 +1,8 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from contact_book_orm.models.contact import Contact
-from contact_book_orm.models.base import Base
+from sqlalchemy.orm import declarative_base
+Base = declarative_base()
 
 engine = create_engine('sqlite:///contact_book.db')
 Base.metadata.create_all(engine)
